@@ -46,3 +46,30 @@ VALUES
     ('Deepak Kumar', '040-78901234', 'deepak.kumar@example.com', '5-9-22, Secretariat Road, Hyderabad, Telangana'),
     ('Sanjana Gupta', '022-90123456', 'sanjana.gupta@example.com', '6, Hill Road, Bandra West, Mumbai, Maharashtra'),
     ('Siddharth Sharma', '011-34567890', 'siddharth.sharma@example.com', '18, Rajpath, New Delhi, Delhi');
+
+INSERT INTO room_type_cost (room_type, price)
+VALUES
+    ('Single Room', 2500),
+    ('Double Room', 3500),
+    ('Twin Room', 3500),
+    ('Triple Room', 4500),
+    ('Family Room', 6000),
+    ('Suite', 8000);
+
+INSERT INTO staff (name, phone, email, address, position)
+VALUES 
+    ('Aarav Gupta', '555-1234', 'aarav.gupta@hotel.com', '123 Main St, Anytown, USA', 'Hotel Manager'),
+    ('Aditi Shah', '555-5678', 'aditi.shah@hotel.com', '456 Elm St, Anytown, USA', 'Assistant Manager'),
+    ('Anjali Singh', '555-9876', 'anjali.singh@hotel.com', '789 Oak St, Anytown, USA', 'Front Desk Clerk'),
+    ('Arnav Patel', '555-4321', 'arnav.patel@hotel.com', '321 Elm St, Anytown, USA', 'Housekeeping Supervisor'),
+    ('Aryan Sharma', '555-8765', 'aryan.sharma@hotel.com', '654 Oak St, Anytown, USA', 'Bellhop'),
+    ('Diya Singh', '555-2345', 'diya.singh@hotel.com', '345 Main St, Anytown, USA', 'Restaurant Manager'),
+    ('Ishaan Gupta', '555-6789', 'ishaan.gupta@hotel.com', '678 Elm St, Anytown, USA', 'Waiter'),
+    ('Kavya Patel', '555-5432', 'kavya.patel@hotel.com', '432 Oak St, Anytown, USA', 'Housekeeper'),
+    ('Manav Kumar', '555-9876', 'manav.kumar@hotel.com', '876 Main St, Anytown, USA', 'Maintenance'),
+    ('Neha Shah', '555-3456', 'neha.shah@hotel.com', '567 Elm St, Anytown, USA', 'Concierge'),
+    ('Pranav Singh', '555-7890', 'pranav.singh@hotel.com', '890 Oak St, Anytown, USA', 'Front Desk Clerk'),
+    ('Riya Gupta', '555-2345', 'riya.gupta@hotel.com', '345 Main St, Anytown, USA', 'Housekeeping'),
+    ('Rohan Patel', '555-6789', 'rohan.patel@hotel.com', '678 Elm St, Anytown, USA', 'Room Service'),
+    ('Sahil Sharma', '555-5432', 'sahil.sharma@hotel.com', '432 Oak St, Anytown, USA', 'Security'),
+    ('Tanya Kumar', '555-9876', 'tanya.kumar@hotel.com', '876 Main St, Anytown, USA', 'Sales Manager');

@@ -9,6 +9,18 @@ BEGIN
     VALUES (NULL, p_name, p_phone, p_email, p_address);
 END;
 
+CREATE PROCEDURE IF NOT EXISTS new_staff(
+    IN p_name VARCHAR(255),
+    IN p_phone VARCHAR(20),
+    IN p_email VARCHAR(255),
+    IN p_address VARCHAR(255),
+    IN p_position VARCHAR(255)
+)
+BEGIN
+    INSERT INTO staff
+    VALUES (NULL, p_name, p_phone, p_email, p_address,p_position);
+END;
+
 CREATE PROCEDURE IF NOT EXISTS delete_guest (
     IN p_id INT
 )

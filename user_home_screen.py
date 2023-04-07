@@ -2,6 +2,7 @@ import tkinter as tk
 from PIL import ImageTk, Image
 from guest import *
 from utils import *
+from staff import *
 class HomePageScreen(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -87,7 +88,8 @@ class HomePageScreen(tk.Tk):
     
     def staff(self):
         clear_frame(self.bottom_Frame)
-        print("staff")
+        clear_frame(self.bottom_Frame1)
+        Staff(self.bottom_Frame,self.bottom_Frame1)
     
     def orders(self):
         clear_frame(self.bottom_Frame)
