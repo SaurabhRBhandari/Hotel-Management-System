@@ -37,6 +37,7 @@ class Guest():
         
     def add(self):
         root = tk.Tk()
+        root.title("Add Guest")
         form = NewCustomerForm(root)
         form.pack()
         root.mainloop()
@@ -50,6 +51,7 @@ class Guest():
             return
         id=self.table.item(selectedItems[0],"values")[0]
         root = tk.Tk()
+        root.title("Update Guest")
         form = UpdateCustomerForm(root,id,self.table.item(selectedItems[0],"values")[1:])
         form.pack()
         root.mainloop()
