@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS staff (
     position VARCHAR(255));
 
 CREATE TABLE IF NOT EXISTS allots (
-    staff_id INT REFERENCES staff, 
+    staff_id INT REFERENCES staff ON DELETE CASCADE, 
     room_no INT REFERENCES room, 
     PRIMARY KEY (staff_id, room_no));
 
