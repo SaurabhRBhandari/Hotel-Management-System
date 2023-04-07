@@ -1,0 +1,1 @@
+SELECT customer_id, name, phone, email, address FROM customer;
