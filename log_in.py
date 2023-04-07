@@ -33,7 +33,7 @@ class LoginScreen(tk.Tk):
             self.destroy() # close login screen
             home_screen = HomePageScreen() # create new home screen instance
             home_screen.mainloop() # start main loop
-        elif username == "admin" or password == "password":
+        elif username == "admin" and password == "password":
             self.destroy() # close login screen
             admin_screen = AdminHomePageScreen() # create new admin screen instance
             admin_screen.mainloop() # start main loop
