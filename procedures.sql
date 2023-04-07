@@ -51,3 +51,26 @@ BEGIN
     SELECT * FROM customer
     WHERE customer_id = id;
 END;
+
+CREATE PROCEDURE IF NOT EXISTS update_staff(
+    IN id INT, 
+    IN name VARCHAR(255), 
+    IN phone VARCHAR(20), 
+    IN email VARCHAR(255), 
+    IN position VARCHAR(255))
+BEGIN
+    UPDATE staff SET
+        name = name,
+        phone = phone,
+        email = email,
+        position=position
+    WHERE staff_id = id;
+END;
+
+CREATE PROCEDURE IF NOT EXISTS delete_staff (
+    IN p_id INT
+)
+BEGIN
+    DELETE FROM staff
+    WHERE staff_id = p_id;
+END;

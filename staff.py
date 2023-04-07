@@ -63,7 +63,7 @@ class Staff():
             label.pack()
             return
         for item in selectedItems:
-            executeProc(self.table.item(item,"values")[0],procName="delete_guest")
+            executeProc(self.table.item(item,"values")[0],procName="delete_staff")
         clear_frame(self.frame)
         clear_frame(self.frame1)
         Staff(self.frame,self.frame1)
