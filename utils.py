@@ -8,6 +8,7 @@ def execute(filename, getInfo=False):
         user="user",
         passwd="password",
     )
+    cnz.autocommit = True
     cursor=cnz.cursor(buffered=True)
     cursor.execute("USE hoteldb")
     with open(filename, 'r') as sql_file:
@@ -27,6 +28,7 @@ def executeProc(*args,procName,getInfo=False):
         user="user",
         passwd="password",
     )
+    cnz.autocommit = True
     cursor=cnz.cursor(buffered=True)
     cursor.execute("USE hoteldb;")
     cursor.callproc(procName,args)
@@ -34,7 +36,6 @@ def executeProc(*args,procName,getInfo=False):
         data=cursor.fetchall()
         cursor.close()
         return data
-    cnz.commit()
     cursor.close()
     cnz.close()
 

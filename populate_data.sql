@@ -46,7 +46,6 @@ VALUES
     ('Deepak Kumar', '040-78901234', 'deepak.kumar@example.com', '5-9-22, Secretariat Road, Hyderabad, Telangana'),
     ('Sanjana Gupta', '022-90123456', 'sanjana.gupta@example.com', '6, Hill Road, Bandra West, Mumbai, Maharashtra'),
     ('Siddharth Sharma', '011-34567890', 'siddharth.sharma@example.com', '18, Rajpath, New Delhi, Delhi');
-
 INSERT INTO room_type_cost (room_type, price)
 VALUES
     ('Single Room', 2500),
@@ -55,7 +54,6 @@ VALUES
     ('Triple Room', 4500),
     ('Family Room', 6000),
     ('Suite', 8000);
-
 INSERT INTO staff (name, phone, email, address, position)
 VALUES 
     ('Aarav Gupta', '555-1234', 'aarav.gupta@hotel.com', '123 Main St, Anytown, USA', 'Hotel Manager'),
