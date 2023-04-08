@@ -1,0 +1,1 @@
+SELECT room_no FROM room;

@@ -74,3 +74,15 @@ BEGIN
     DELETE FROM staff
     WHERE staff_id = p_id;
 END;
+
+CREATE PROCEDURE IF NOT EXISTS new_order(
+    IN p_room_no INT,
+    IN p_service_name VARCHAR(255),
+    IN p_quantity INT
+)
+BEGIN
+    INSERT INTO service
+    VALUES (NULL, p_service_name, p_quantity);
+    INSERT INTO provides
+    VALUES (p_room_no, LAST_INSERT_ID());
+END;

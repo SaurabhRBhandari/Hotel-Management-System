@@ -3,6 +3,7 @@ from PIL import ImageTk, Image
 from guest import *
 from utils import *
 from staff import *
+from orders import *
 class HomePageScreen(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -93,4 +94,5 @@ class HomePageScreen(tk.Tk):
     
     def orders(self):
         clear_frame(self.bottom_Frame)
-        print("orders")
+        clear_frame(self.bottom_Frame1)
+        Orders(self.bottom_Frame,self.bottom_Frame1)
