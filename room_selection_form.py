@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from utils import *
 from tkcalendar import Calendar, DateEntry
+import tkinter.messagebox
 class RoomSelectionForm(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
@@ -77,6 +78,7 @@ class RoomSelectionForm(tk.Frame):
         print(room_str)
         executeProc(customer_id,room_str,check_in_date,check_out_date,procName="book_rooms")
         self.master.destroy()
+        tk.messagebox.showinfo("Success!",f"Rooms {room_str} booked for {customer_name} from {check_in_date} to {check_out_date}.")
 
     def get_room_data(self):
         return execute("get_avail_room_data.sql", getInfo=True);

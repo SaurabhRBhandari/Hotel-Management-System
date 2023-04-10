@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 from utils import *
-from new_room_prompt import *
-from allot_staff_prompt import *
+from new_room_form import *
+from allot_staff_form import *
 from tkcalendar import DateEntry, Calendar
 class Room():
     def __init__(self,frame,frame1):

@@ -1,6 +1,6 @@
 import tkinter as tk
-from user_home_screen import HomePageScreen
-from admin_home_screen import AdminHomePageScreen
+from user_home_page import HomePageScreen
+from admin_home_screen_page import AdminHomePageScreen
 class LoginScreen(tk.Tk):
     def __init__(self):
         super().__init__()

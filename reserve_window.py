@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from utils import *
-from room_selection import *
+from room_selection_form import *
 
 class Reserve():
     def __init__(self,frame,frame1):

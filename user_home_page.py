@@ -1,11 +1,11 @@
 import tkinter as tk
 from PIL import ImageTk, Image
-from guest import *
+from guest_window import *
 from utils import *
-from staff import *
-from orders import *
-from room import *
-from reserve import *
+from staff_window import *
+from orders_window import *
+from room_window import *
+from reserve_window import *
 class HomePageScreen(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -14,6 +14,7 @@ class HomePageScreen(tk.Tk):
         self.minsize(1080, 550)
         self.maxsize(1080, 550)
         self.create_widgets()
+        self.reserve()
 
     def create_widgets(self):
         sep = tk.Frame(height=500,bd=1,relief='sunken',bg='white')

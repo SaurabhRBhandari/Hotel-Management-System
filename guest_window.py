@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 from utils import *
-from new_staff_prompt import *
-from edit_staff_prompt import *
-class Staff():
+from new_guest_form import *
+from edit_guest_form import *
+class Guest():
     def __init__(self,frame,frame1):
         super().__init__()
         self.frame=frame
@@ -11,15 +11,15 @@ class Staff():
         self.create_widgets()
     
     def create_widgets(self):
-        self.table = ttk.Treeview(self.frame, columns=("staff_id", "name", "phone", "email", "position"), show="headings")
-        self.table.heading("staff_id", text="Staff ID")
+        self.table = ttk.Treeview(self.frame, columns=("customer_id", "name", "phone", "email", "address"), show="headings")
+        self.table.heading("customer_id", text="Cust. ID")
         self.table.heading("name", text="Name")
         self.table.heading("phone", text="Phone")
         self.table.heading("email", text="Email")
-        self.table.heading("position", text="Position")
+        self.table.heading("address", text="Address")
         scrollbar = ttk.Scrollbar(self.frame, orient="vertical", command=self.table.yview)
         self.table.configure(yscrollcommand=scrollbar.set)
-        data=self.get_staff_data()
+        data=self.get_guest_data()
         for i in data:
             self.table.insert("", tk.END, values=i)
         self.table.pack(side=tk.TOP, fill=tk.BOTH, expand=True, padx=20, pady=20)
@@ -32,13 +32,13 @@ class Staff():
         b3.grid(row=0,column=2,padx=10)
         b4.grid(row=0,column=3,padx=10)
         
-    def get_staff_data(self):
-        return execute("fetch_staff_info.sql",True)
+    def get_guest_data(self):
+        return execute("fetch_guest_info.sql",True)
         
     def add(self):
         root = tk.Tk()
-        root.title("Add Staff")
-        form = NewStaffForm(root)
+        root.title("Add Guest")
+        form = NewCustomerForm(root)
         form.pack()
         root.mainloop()
         
@@ -51,8 +51,8 @@ class Staff():
             return
         id=self.table.item(selectedItems[0],"values")[0]
         root = tk.Tk()
-        root.title("Update Staff")
-        form = UpdateStaffForm(root,id,self.table.item(selectedItems[0],"values")[1:])
+        root.title("Update Guest")
+        form = UpdateCustomerForm(root,id,self.table.item(selectedItems[0],"values")[1:])
         form.pack()
         root.mainloop()
         
@@ -63,12 +63,12 @@ class Staff():
             label.pack()
             return
         for item in selectedItems:
-            executeProc(self.table.item(item,"values")[0],procName="delete_staff")
+            executeProc(self.table.item(item,"values")[0],procName="delete_guest")
         clear_frame(self.frame)
         clear_frame(self.frame1)
-        Staff(self.frame,self.frame1)
+        Guest(self.frame,self.frame1)
         
     def refresh(self):
         clear_frame(self.frame)
         clear_frame(self.frame1)
-        Staff(self.frame,self.frame1)
+        Guest(self.frame,self.frame1)

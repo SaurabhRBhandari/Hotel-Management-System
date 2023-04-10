@@ -1,6 +1,6 @@
 from tkinter import *
 import mysql.connector as mysql
-from log_in import LoginScreen
+from log_in_page import LoginScreen
 from utils import *
 
 execute("init_db.sql")

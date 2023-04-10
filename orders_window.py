@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 from utils import *
-from new_service_prompt import *
-from new_order_prompt import *
+from new_service_form import *
+from new_order_form import *
 class Orders():
     def __init__(self,frame,frame1):
         super().__init__()

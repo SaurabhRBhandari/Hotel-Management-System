@@ -81,11 +81,50 @@ CREATE PROCEDURE IF NOT EXISTS new_order(
     IN p_quantity INT
 )
 BEGIN
+    DECLARE v_customer_id INT;
+    DECLARE v_bill_id INT;
+    DECLARE v_service_cost INT;
+
+    -- Find the customer ID of the guest currently occupying the room
+    SELECT customer_id INTO v_customer_id
+    FROM pays
+    WHERE bill_id = (
+        SELECT bill_id
+        FROM reservation
+        WHERE room_no = p_room_no
+        AND checkin_date <= NOW()
+        AND checkout_date > NOW()
+    );
+    
+    -- Get the bill ID for the customer's current bill
+    SELECT bill_id INTO v_bill_id
+    FROM pays
+    WHERE customer_id = v_customer_id
+    AND bill_id = (
+        SELECT bill_id
+        FROM reservation
+        WHERE room_no = p_room_no
+        AND checkin_date <= NOW()
+        AND checkout_date > NOW()
+    );
+    
+    -- Get the service cost for the requested service
+    SELECT service_cost INTO v_service_cost
+    FROM service_info
+    WHERE service_name = p_service_name;
+
+    -- Add the service cost to the current bill's service_cost field
+    UPDATE bill
+    SET service_cost = service_cost + (v_service_cost * p_quantity)
+    WHERE bill_id = v_bill_id;
+
+    -- Add the service to the room's list of provided services
     INSERT INTO service
     VALUES (NULL, p_service_name, p_quantity);
     INSERT INTO provides
     VALUES (p_room_no, LAST_INSERT_ID());
 END;
+
 
 CREATE PROCEDURE IF NOT EXISTS new_room(
     IN p_room_no INT,
