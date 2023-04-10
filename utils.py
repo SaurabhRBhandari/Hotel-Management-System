@@ -25,7 +25,6 @@ def execute(filename, getInfo=False):
 
 
 def executeProc(*args, procName, getInfo=False):
-    filename='sql queries/'+filename
     cnz = mysql.connect(
         host="localhost",
         user="user",
