@@ -1,0 +1,1 @@
+SELECT room_type FROM room_type_cost;

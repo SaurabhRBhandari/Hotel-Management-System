@@ -4,6 +4,8 @@ from guest import *
 from utils import *
 from staff import *
 from orders import *
+from room import *
+from reserve import *
 class HomePageScreen(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -76,7 +78,8 @@ class HomePageScreen(tk.Tk):
     
     def reserve(self):
         clear_frame(self.bottom_Frame)
-        print("reserve")
+        clear_frame(self.bottom_Frame1)
+        Reserve(self.bottom_Frame,self.bottom_Frame1)
     
     def guest(self):
         clear_frame(self.bottom_Frame)
@@ -85,7 +88,8 @@ class HomePageScreen(tk.Tk):
         
     def room(self):
         clear_frame(self.bottom_Frame)
-        print("room")
+        clear_frame(self.bottom_Frame1)
+        Room(self.bottom_Frame,self.bottom_Frame1)
     
     def staff(self):
         clear_frame(self.bottom_Frame)

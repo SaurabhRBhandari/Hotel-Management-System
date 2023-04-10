@@ -86,3 +86,32 @@ BEGIN
     INSERT INTO provides
     VALUES (p_room_no, LAST_INSERT_ID());
 END;
+
+CREATE PROCEDURE IF NOT EXISTS new_room(
+    IN p_room_no INT,
+    IN p_room_type VARCHAR(255),
+    IN p_room_status BOOLEAN
+)
+BEGIN
+    INSERT INTO room
+    VALUES (p_room_no, p_room_type, p_room_status);
+END;
+
+CREATE PROCEDURE IF NOT EXISTS set_staff(
+    IN p_staff_id INT,
+    IN p_room_no INT
+)
+BEGIN
+    INSERT INTO allots
+    VALUES (p_staff_id, p_room_no);
+END;
+
+CREATE PROCEDURE toggle_status(
+    IN p_room_no INT
+)
+BEGIN
+    UPDATE room SET
+        room_status = NOT room_status
+    WHERE room_no = p_room_no;
+END;
+

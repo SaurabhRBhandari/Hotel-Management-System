@@ -37,8 +37,8 @@ class NewOrderForm(tk.Frame):
         self.submit_button.grid(row=3, column=1, padx=5, pady=5)
         
 
-    def get_room_list(self):
-        return execute("get_room_list.sql",getInfo=True)
+    # def get_room_list(self):
+    #     return execute("get_room_list.sql",getInfo=True)
 
     def get_service_list(self):
         return execute("get_service_list.sql",getInfo=True)
