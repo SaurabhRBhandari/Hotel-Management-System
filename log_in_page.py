@@ -1,6 +1,8 @@
 import tkinter as tk
 from user_home_page import HomePageScreen
 from admin_home_screen_page import AdminHomePageScreen
+
+
 class LoginScreen(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -19,9 +21,10 @@ class LoginScreen(tk.Tk):
         self.password_label.pack(pady=10)
         self.password_entry = tk.Entry(self.master, show="*")
         self.password_entry.pack()
-        
+
         # Create the login button
-        self.login_button = tk.Button(self.master, text="Login", command=self.login)
+        self.login_button = tk.Button(
+            self.master, text="Login", command=self.login)
         self.login_button.pack(pady=15)
 
     def login(self):
@@ -30,14 +33,14 @@ class LoginScreen(tk.Tk):
         password = self.password_entry.get()
 
         if username == "user" and password == "password":
-            self.destroy() # close login screen
-            home_screen = HomePageScreen() # create new home screen instance
-            home_screen.mainloop() # start main loop
+            self.destroy()  # close login screen
+            home_screen = HomePageScreen()  # create new home screen instance
+            home_screen.mainloop()  # start main loop
         elif username == "admin" and password == "password":
-            self.destroy() # close login screen
-            admin_screen = AdminHomePageScreen() # create new admin screen instance
-            admin_screen.mainloop() # start main loop
+            self.destroy()  # close login screen
+            admin_screen = AdminHomePageScreen()  # create new admin screen instance
+            admin_screen.mainloop()  # start main loop
         else:
-            label= tk.Label(self.master, text="Invalid username or password", fg="red")
+            label = tk.Label(
+                self.master, text="Invalid username or password", fg="red")
             label.pack()
-

@@ -1,5 +1,7 @@
 import tkinter as tk
 from utils import *
+
+
 class NewServiceForm(tk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
@@ -18,7 +20,8 @@ class NewServiceForm(tk.Frame):
         self.address_entry = tk.Entry(self)
 
         # create a submit button to add the new customer to the database
-        self.submit_button = tk.Button(self, text="Submit", command=self.submit_form)
+        self.submit_button = tk.Button(
+            self, text="Submit", command=self.submit_form)
 
         # position the form elements using grid layout
         self.name_label.grid(row=0, column=0, padx=5, pady=5)
@@ -44,4 +47,3 @@ class NewServiceForm(tk.Frame):
 
         executeProc(name, phone, email, address, procName="new_guest")
         self.parent.destroy()
-        

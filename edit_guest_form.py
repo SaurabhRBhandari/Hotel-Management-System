@@ -1,9 +1,11 @@
 import tkinter as tk
 from utils import *
+
+
 class UpdateCustomerForm(tk.Frame):
     def __init__(self, parent, id, data):
         super().__init__(parent)
-        self.data=data
+        self.data = data
         self.parent = parent
         self.cust_id = id
         # create labels and entry fields for each input
@@ -20,7 +22,8 @@ class UpdateCustomerForm(tk.Frame):
         self.address_entry = tk.Entry(self)
 
         # create a submit button to add the new customer to the database
-        self.submit_button = tk.Button(self, text="Submit", command=self.submit_form)
+        self.submit_button = tk.Button(
+            self, text="Submit", command=self.submit_form)
 
         # position the form elements using grid layout
         self.name_label.grid(row=0, column=0, padx=5, pady=5)
@@ -36,9 +39,9 @@ class UpdateCustomerForm(tk.Frame):
         self.address_entry.grid(row=3, column=1, padx=5, pady=5)
 
         self.submit_button.grid(row=4, column=1, padx=5, pady=5)
-        
+
         self.populateForm()
-        
+
     def populateForm(self):
         self.name_entry.insert(0, self.data[0])
         self.phone_entry.insert(0, self.data[1])
@@ -52,6 +55,6 @@ class UpdateCustomerForm(tk.Frame):
         email = self.email_entry.get()
         address = self.address_entry.get()
 
-        executeProc(self.cust_id,name, phone, email, address, procName="update_customer")
+        executeProc(self.cust_id, name, phone, email,
+                    address, procName="update_customer")
         self.parent.destroy()
-        
