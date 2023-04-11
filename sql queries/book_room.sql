@@ -68,3 +68,16 @@ BEGIN
     DELETE FROM reservation r WHERE r.bill_id = booking_id AND r.room_no = room_no;
     UPDATE bill b SET base_cost = base_cost - reservation_cost*(DATEDIFF(checkout_date,checkin_date)) WHERE b.bill_id = bill_id;
 END ;
+
+CREATE PROCEDURE IF NOT EXISTS generate_bill(
+    IN bill_id INT
+)
+BEGIN
+    SELECT c.name, c.email, b.base_cost, b.service_cost, r.checkin_date, r.checkout_date, COUNT(DISTINCT r.room_no) AS num_rooms
+    FROM pays p
+    JOIN customer c ON p.customer_id = c.customer_id
+    JOIN bill b ON p.bill_id = b.bill_id
+    JOIN reservation r ON p.bill_id = r.bill_id
+    WHERE p.bill_id = bill_id
+    GROUP BY c.name, c.email, b.base_cost, b.service_cost, r.checkin_date, r.checkout_date;
+END;

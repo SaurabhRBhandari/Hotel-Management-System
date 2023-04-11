@@ -17,9 +17,11 @@ class AdminHomePageScreen(tk.Tk):
         x = 50
         y = 50
         for room in rooms:
-            if room[1] :  # room is vacant
+            if room[1] == 2:  # room is vacant
                 fill_color = "green"
-            else:  # room is occupied
+            elif room[1] == 1:  # room is occupied
+                fill_color = "gray"
+            else :
                 fill_color = "red"
             canvas.create_rectangle(x, y, x+50, y+50, fill=fill_color, outline="black")
             canvas.create_text(x+25, y+25, text=str(room[0]))

@@ -1,7 +1,8 @@
-SELECT r.room_no, r.room_status AND
+SELECT r.room_no,
        CASE
            WHEN res.checkin_date <= CURRENT_DATE() AND res.checkout_date >= CURRENT_DATE() THEN 0
-           ELSE 1
+           ELSE room_status+1
+           END
        END
 FROM room r
 LEFT JOIN (

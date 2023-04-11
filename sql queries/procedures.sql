@@ -153,3 +153,4 @@ BEGIN
         room_status = NOT room_status
     WHERE room_no = p_room_no;
 END;
+

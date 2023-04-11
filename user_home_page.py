@@ -6,7 +6,7 @@ from staff_window import *
 from orders_window import *
 from room_window import *
 from reserve_window import *
-
+from bill_window import *
 
 class HomePageScreen(tk.Tk):
     def __init__(self):
@@ -63,8 +63,8 @@ class HomePageScreen(tk.Tk):
         b5.place(x=720, y=0)
 
         img = ImageTk.PhotoImage(Image.open("images/logout.png"))
-        b6 = tk.Button(self.menu_bar, text='Exit', image=img,
-                       width=179, height=100, command=self.logout)
+        b6 = tk.Button(self.menu_bar, text='Generate Bill', image=img,
+                       width=179, height=100, command=self.bill)
         b6.image = img
         b6.place(x=900, y=0)
 
@@ -78,7 +78,7 @@ class HomePageScreen(tk.Tk):
                  font='msserif 13', bg='white').place(x=774, y=106)
         tk.Label(self.menu_bar, text='Staff Info',
                  font='msserif 13', bg='white').place(x=570, y=106)
-        tk.Label(self.menu_bar, text='Exit', font='msserif 13',
+        tk.Label(self.menu_bar, text='Bills', font='msserif 13',
                  bg='white').place(x=968, y=106)
 
         self.menu_bar.pack_propagate(False)
@@ -88,9 +88,6 @@ class HomePageScreen(tk.Tk):
 
         self.bottom_Frame1 = tk.Frame(self, height=290, width=1080)
         self.bottom_Frame1.pack(side=tk.BOTTOM)
-
-    def logout(self):
-        self.destroy()
 
     def reserve(self):
         clear_frame(self.bottom_Frame)
@@ -116,6 +113,11 @@ class HomePageScreen(tk.Tk):
         clear_frame(self.bottom_Frame)
         clear_frame(self.bottom_Frame1)
         Orders(self.bottom_Frame, self.bottom_Frame1)
+    
+    def bill(self):
+        clear_frame(self.bottom_Frame)
+        clear_frame(self.bottom_Frame1)
+        Bill(self.bottom_Frame, self.bottom_Frame1)
 
 if __name__=='__main__':
     HomePageScreen().mainloop()
