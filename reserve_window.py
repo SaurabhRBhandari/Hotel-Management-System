@@ -14,11 +14,11 @@ class Reserve():
     def create_widgets(self):
         self.table = ttk.Treeview(self.frame, columns=(
                 "bill_id", "room_no", "customer_name", "check_in", "check_out"), show="headings")
-        self.table.heading("bill_id", text="Bill ID")
-        self.table.heading("room_no", text="Room No.")
-        self.table.heading("customer_name", text="Name")
-        self.table.heading("check_in", text="Check In Date")
-        self.table.heading("check_out", text="Check Out Date")
+        self.table.heading("bill_id", text="Bill ID", command=lambda: treeview_sort_column(self.table, "bill_id", False))
+        self.table.heading("room_no", text="Room No.", command=lambda: treeview_sort_column(self.table, "room_no", False))
+        self.table.heading("customer_name", text="Name", command=lambda: treeview_sort_column(self.table, "customer_name", False))
+        self.table.heading("check_in", text="Check In Date", command=lambda: treeview_sort_column(self.table, "check_in", False))
+        self.table.heading("check_out", text="Check Out Date", command=lambda: treeview_sort_column(self.table, "check_out", False))
         scrollbar = ttk.Scrollbar(
             self.frame, orient="vertical", command=self.table.yview)
         self.table.configure(yscrollcommand=scrollbar.set)

@@ -15,11 +15,11 @@ class Staff():
     def create_widgets(self):
         self.table = ttk.Treeview(self.frame, columns=(
             "staff_id", "name", "phone", "email", "position"), show="headings")
-        self.table.heading("staff_id", text="Staff ID")
-        self.table.heading("name", text="Name")
-        self.table.heading("phone", text="Phone")
-        self.table.heading("email", text="Email")
-        self.table.heading("position", text="Position")
+        self.table.heading("staff_id", text="Staff ID",command=lambda: treeview_sort_column(self.table, "staff_id", False))
+        self.table.heading("name", text="Name",command=lambda: treeview_sort_column(self.table, "name", False))
+        self.table.heading("phone", text="Phone",command=lambda: treeview_sort_column(self.table, "phone", False))
+        self.table.heading("email", text="Email",command=lambda: treeview_sort_column(self.table, "email", False))
+        self.table.heading("position", text="Position",command=lambda: treeview_sort_column(self.table, "position", False))
         scrollbar = ttk.Scrollbar(
             self.frame, orient="vertical", command=self.table.yview)
         self.table.configure(yscrollcommand=scrollbar.set)
@@ -54,7 +54,7 @@ class Staff():
         selectedItems = self.table.selection()
         if (len(selectedItems) != 1):
             label = tk.Label(
-                self.frame, text="Please select a single row to delete", fg="red")
+                self.frame, text="Please select a single row to update", fg="red")
             label.pack()
             return
         id = self.table.item(selectedItems[0], "values")[0]

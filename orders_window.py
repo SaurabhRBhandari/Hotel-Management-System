@@ -15,11 +15,11 @@ class Orders():
     def create_widgets(self):
         self.table = ttk.Treeview(self.frame, columns=(
             "service_id", "name", "quantity", "room_no", "total_cost"), show="headings")
-        self.table.heading("service_id", text="Service ID")
-        self.table.heading("name", text="Name")
-        self.table.heading("quantity", text="Qt.")
-        self.table.heading("room_no", text="Room No.")
-        self.table.heading("total_cost", text="Total Cost")
+        self.table.heading("service_id", text="Service ID", command=lambda: treeview_sort_column(self.table, "service_id", False))
+        self.table.heading("name", text="Name", command=lambda: treeview_sort_column(self.table, "name", False))
+        self.table.heading("quantity", text="Qt.", command=lambda: treeview_sort_column(self.table, "quantity", False))
+        self.table.heading("room_no", text="Room No.", command=lambda: treeview_sort_column(self.table, "room_no", False))
+        self.table.heading("total_cost", text="Total Cost", command=lambda: treeview_sort_column(self.table, "total_cost", False))
         scrollbar = ttk.Scrollbar(
             self.frame, orient="vertical", command=self.table.yview)
         self.table.configure(yscrollcommand=scrollbar.set)
