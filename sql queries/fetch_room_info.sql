@@ -9,8 +9,7 @@ CASE
               reservation.checkout_date >= CURDATE()
     ) THEN 'Available'
     ELSE 'Booked'
-END AS is_available, 
-rtc.price,
+END AS is_available,
 GROUP_CONCAT(DISTINCT s.name ORDER BY s.staff_id ASC SEPARATOR ', ') AS staff_allotted,
 IFNULL(c.name, 'N/A') AS guest_name
 FROM room r

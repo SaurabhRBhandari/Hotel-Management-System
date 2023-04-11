@@ -56,22 +56,22 @@ END;
 CREATE PROCEDURE IF NOT EXISTS update_customer(
     IN id INT,
     -- Input parameter for the customer_id to be updated
-    IN name VARCHAR(255),
+    IN p_name VARCHAR(255),
     -- Input parameter for the updated name of the customer
-    IN phone VARCHAR(20),
+    IN p_phone VARCHAR(20),
     -- Input parameter for the updated phone number of the customer
-    IN email VARCHAR(255),
+    IN p_email VARCHAR(255),
     -- Input parameter for the updated email of the customer
-    IN address VARCHAR(255) -- Input parameter for the updated address of the customer
+    IN p_address VARCHAR(255) -- Input parameter for the updated address of the customer
 ) BEGIN
 UPDATE
     customer
 SET
     -- Update the row in the customer table with the provided information
-    name = name,
-    phone = phone,
-    email = email,
-    address = address
+    name = p_name,
+    phone = p_phone,
+    email = p_email,
+    address = p_address
 WHERE
     customer_id = id;
 

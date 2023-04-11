@@ -3,7 +3,7 @@ SELECT r.room_no,
            WHEN res.checkin_date <= CURRENT_DATE() AND res.checkout_date >= CURRENT_DATE() THEN 0
            ELSE r.room_status+1
        END AS room_status,
-       DATEDIFF(CURRENT_DATE(),res.checkin_date)
+       DATEDIFF(res.checkout_date,CURRENT_DATE())
 FROM room r
 LEFT JOIN (
     SELECT *
