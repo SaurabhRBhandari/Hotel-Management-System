@@ -1,7 +1,6 @@
 import tkinter as tk
 from utils import *
 import matplotlib.pyplot as plt
-import numpy as np
 class AdminHomePageScreen(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -13,7 +12,6 @@ class AdminHomePageScreen(tk.Tk):
         canvas = tk.Canvas(self, width=600, height=600)
         canvas.grid(row=0,columnspan=3)
         rooms=execute('get_occupied_rooms.sql',getInfo=True)
-        # rooms = [    {'room_no': 101, 'room_status': 0},    {'room_no': 102, 'room_status': 1},    {'room_no': 103, 'room_status': 1},    {'room_no': 104, 'room_status': 0},    {'room_no': 105, 'room_status': 0},    {'room_no': 106, 'room_status': 1},    {'room_no': 107, 'room_status': 0},    {'room_no': 108, 'room_status': 1},    {'room_no': 109, 'room_status': 0},    {'room_no': 110, 'room_status': 1},    {'room_no': 111, 'room_status': 1},    {'room_no': 112, 'room_status': 0},    {'room_no': 113, 'room_status': 1},    {'room_no': 114, 'room_status': 0},    {'room_no': 115, 'room_status': 1},    {'room_no': 116, 'room_status': 0},    {'room_no': 117, 'room_status': 0},    {'room_no': 118, 'room_status': 0},    {'room_no': 119, 'room_status': 0},    {'room_no': 120, 'room_status': 0}]
         x = 50
         y = 50
         for room in rooms:

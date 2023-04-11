@@ -142,95 +142,37 @@ VALUES
 (905, 'Family Room', true),
 (906, 'Suite', true);
 
-INSERT INTO service
-VALUES
-    (NULL, 'Airport Transfer', 2),
-    (NULL, 'Business Center Services', 3),
-    (NULL, 'Concierge Service', 1),
-    (NULL, 'Fitness Center Access', 1),
-    (NULL, 'Housekeeping Service', 2),
-    (NULL, 'In-room Dining', 1),
-    (NULL, 'Laundry Service', 2),
-    (NULL, 'Pool Access', 1),
-    (NULL, 'Room Service', 2),
-    (NULL, 'Spa Service', 3),
-    (NULL, 'Airport Transfer', 1),
-    (NULL, 'Business Center Services', 2),
-    (NULL, 'Concierge Service', 3),
-    (NULL, 'Fitness Center Access', 1),
-    (NULL, 'Housekeeping Service', 2),
-    (NULL, 'In-room Dining', 1),
-    (NULL, 'Laundry Service', 2),
-    (NULL, 'Pool Access', 1),
-    (NULL, 'Room Service', 2),
-    (NULL, 'Spa Service', 3),
-    (NULL, 'Airport Transfer', 2),
-    (NULL, 'Business Center Services', 3),
-    (NULL, 'Concierge Service', 1),
-    (NULL, 'Fitness Center Access', 1),
-    (NULL, 'Housekeeping Service', 2),
-    (NULL, 'In-room Dining', 1),
-    (NULL, 'Laundry Service', 2),
-    (NULL, 'Pool Access', 1),
-    (NULL, 'Room Service', 2),
-    (NULL, 'Spa Service', 3);
 
-INSERT INTO provides
-VALUES
-    (101, 1),
-    (102, 2),
-    (103, 3),
-    (104, 4),
-    (105, 5),
-    (106, 6),
-    (201, 7),
-    (202, 8),
-    (203, 9),
-    (204, 10),
-    (205, 11),
-    (206, 12),
-    (301, 13),
-    (302, 14),
-    (303, 15),
-    (304, 16),
-    (305, 17),
-    (306, 18),
-    (401, 19),
-    (402, 20),
-    (403, 21),
-    (404, 22),
-    (405, 23),
-    (406, 24),
-    (501, 25),
-    (502, 26),
-    (503, 27),
-    (504, 28),
-    (505, 29),
-    (506, 30);
-CALL book_rooms(1, '(101),(102)', '2023-05-01', '2023-05-05');
-CALL book_rooms(2, '(103),(104)', '2023-05-02', '2023-05-07');
-CALL book_rooms(3, '(105),(106)', '2023-05-03', '2023-05-09');
-CALL book_rooms(4, '(201),(202)', '2023-05-04', '2023-05-11');
-CALL book_rooms(5, '(203),(204)', '2023-05-05', '2023-05-13');
-CALL book_rooms(6, '(205),(206)', '2023-05-06', '2023-05-15');
-CALL book_rooms(7, '(301),(302)', '2023-05-07', '2023-05-17');
-CALL book_rooms(8, '(303),(304)', '2023-05-08', '2023-05-19');
-CALL book_rooms(9, '(305),(306)', '2023-05-09', '2023-05-21');
-CALL book_rooms(10, '(401),(402)', '2023-05-10', '2023-05-23');
-CALL book_rooms(11, '(403),(404)', '2023-05-11', '2023-05-25');
-CALL book_rooms(12, '(405),(406)', '2023-05-12', '2023-05-27');
-CALL book_rooms(13, '(501),(502)', '2023-05-13', '2023-05-29');
-CALL book_rooms(14, '(503),(504)', '2023-05-14', '2023-05-31');
-CALL book_rooms(15, '(505),(506)', '2023-05-15', '2023-06-02');
-CALL book_rooms(16, '(555),(601)', '2023-05-16', '2023-06-04');
-CALL book_rooms(17, '(602),(603)', '2023-05-17', '2023-06-06');
-CALL book_rooms(18, '(604),(605)', '2023-05-18', '2023-06-08');
-CALL book_rooms(19, '(606),(701)', '2023-05-19', '2023-06-10');
-CALL book_rooms(20, '(702),(703)', '2023-05-20', '2023-06-12');
-CALL book_rooms(21, '(704),(705)', '2023-05-21', '2023-06-14');
-CALL book_rooms(22, '(706),(801)', '2023-05-22', '2023-06-16');
-CALL book_rooms(23, '(802),(803)', '2023-05-23', '2023-06-18');
-CALL book_rooms(24, '(804),(805)', '2023-05-24', '2023-06-20');
-CALL book_rooms(25, '(806),(901)', '2023-05-25', '2023-06-22');
-CALL book_rooms(1, '(201),(203)', '2023-06-01', '2023-06-04');
-CALL book_rooms(2, '(205),(207)', '2023-06-02', '2023-06-06');
+CALL book_rooms(1, '(101),(102)', '2023-04-01', '2023-04-05');
+CALL book_rooms(2, '(103),(104)', '2023-04-06', '2023-04-11');
+CALL book_rooms(3, '(105),(106)', '2023-04-12', '2023-04-18');
+CALL book_rooms(4, '(201),(202)', '2023-04-04', '2023-04-11');
+CALL book_rooms(5, '(203),(204)', '2023-04-13', '2023-04-20');
+CALL book_rooms(6, '(205),(206)', '2023-04-21', '2023-04-28');
+CALL book_rooms(7, '(301),(302)', '2023-04-07', '2023-04-17');
+CALL book_rooms(8, '(303),(304)', '2023-04-18', '2023-04-28');
+CALL book_rooms(9, '(305),(306)', '2023-04-29', '2023-05-09');
+CALL book_rooms(10, '(401),(402)', '2023-04-10', '2023-04-23');
+CALL book_rooms(11, '(403),(404)', '2023-04-24', '2023-05-06');
+CALL book_rooms(12, '(405),(406)', '2023-05-07', '2023-05-19');
+CALL book_rooms(13, '(501),(502)', '2023-04-13', '2023-04-29');
+CALL book_rooms(14, '(503),(504)', '2023-04-30', '2023-05-16');
+CALL book_rooms(15, '(505),(506)', '2023-05-17', '2023-06-02');
+
+
+
+CALL new_order(101, 'Room Service', 1);
+CALL new_order(102, 'Laundry Service', 2);
+CALL new_order(103, 'In-room Dining', 3);
+CALL new_order(104, 'Concierge Service', 4);
+CALL new_order(105, 'Housekeeping Service', 5);
+CALL new_order(101, 'Airport Transfer', 1);
+CALL new_order(102, 'Spa Service', 2);
+CALL new_order(103, 'Fitness Center Access', 3);
+CALL new_order(104, 'Business Center Services', 4);
+CALL new_order(105, 'Pool Access', 5);
+CALL new_order(106, 'Room Service', 2);
+CALL new_order(101, 'Laundry Service', 1);
+CALL new_order(102, 'In-room Dining', 3);
+CALL new_order(103, 'Housekeeping Service', 5);
+CALL new_order(104, 'Airport Transfer', 2);

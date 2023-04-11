@@ -1,4 +1,16 @@
-SELECT r.room_no, rtc.room_type, r.room_status, 
+SELECT r.room_no, rtc.room_type, 
+CASE 
+    WHEN r.room_status = 0 THEN 'Maintenance'
+    WHEN NOT EXISTS (
+        SELECT *
+        FROM reservation
+        WHERE reservation.room_no = r.room_no AND
+              reservation.checkin_date <= CURDATE() AND
+              reservation.checkout_date >= CURDATE()
+    ) THEN 'Available'
+    ELSE 'Booked'
+END AS is_available, 
+rtc.price,
 GROUP_CONCAT(DISTINCT s.name ORDER BY s.staff_id ASC SEPARATOR ', ') AS staff_allotted,
 IFNULL(c.name, 'N/A') AS guest_name
 FROM room r

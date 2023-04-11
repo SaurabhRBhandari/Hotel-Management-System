@@ -3,10 +3,6 @@ import mysql.connector as mysql
 from log_in_page import LoginScreen
 from utils import *
 
-execute("init_db.sql")
-execute("book_room.sql")
-execute("procedures.sql")
-execute("triggers.sql")
 print("Database connected successfully!")
 
 # starting the GUI

@@ -18,7 +18,7 @@ class Room():
             "room_no", "type", "status", "staff", "staying"), show="headings")
         self.table.heading("room_no", text="Room no.")
         self.table.heading("type", text="Room Type")
-        self.table.heading("status", text="Availibility")
+        self.table.heading("status", text="Status")
         self.table.heading("staff", text="Staff")
         self.table.heading("staying", text="Guest")
         scrollbar = ttk.Scrollbar(

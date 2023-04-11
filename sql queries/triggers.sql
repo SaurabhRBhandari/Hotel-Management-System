@@ -3,12 +3,13 @@ AFTER UPDATE ON room
 FOR EACH ROW 
 BEGIN 
     IF NEW.room_status = 0 THEN 
-
+        -- Update checkout date of reservations for the room
         UPDATE reservation 
         SET checkout_date = CURRENT_DATE() 
         WHERE room_no = NEW.room_no 
         AND checkin_date <= CURRENT_DATE() AND checkout_date >= CURRENT_DATE();
     
+        -- Update base cost of bills for the reservations of the room
         UPDATE bill b
         SET b.base_cost = (
             SELECT SUM(room_type_cost.price * DATEDIFF(checkout_date, checkin_date))
