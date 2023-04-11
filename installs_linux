@@ -1,0 +1,8 @@
+pip install mysql-connector-python
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install mysql-server
+sudo apt-get install python-tk
+pip install tkcalendar
+pip install matplotlib
+pip install Pillow
