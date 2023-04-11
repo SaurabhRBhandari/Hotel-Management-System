@@ -56,3 +56,15 @@ BEGIN
     )
     WHERE bill_id = @bill_id;
 END;
+
+
+CREATE PROCEDURE IF NOT EXISTS delete_reservation(IN booking_id INT, IN room_no INT)
+BEGIN
+    DECLARE reservation_cost INT;
+    DECLARE checkin_date DATE;
+    DECLARE checkout_date DATE;
+    SELECT price INTO reservation_cost FROM room_type_cost WHERE room_type = (SELECT room_type FROM room r WHERE r.room_no = room_no);
+    SELECT r.checkin_date,r.checkout_date INTO checkin_date,checkout_date FROM reservation r WHERE r.bill_id = booking_id AND r.room_no = room_no;
+    DELETE FROM reservation r WHERE r.bill_id = booking_id AND r.room_no = room_no;
+    UPDATE bill b SET base_cost = base_cost - reservation_cost*(DATEDIFF(checkout_date,checkin_date)) WHERE b.bill_id = bill_id;
+END ;

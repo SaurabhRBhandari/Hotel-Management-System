@@ -44,11 +44,11 @@ class RoomSelectionForm(tk.Frame):
 
         self.check_in_label = tk.Label(self, text="Check-in date:")
         self.check_in_date = DateEntry(
-            self, width=12, background='darkblue', foreground='white', borderwidth=2)
+            self, width=12, background='darkblue', foreground='white', borderwidth=2,selectmode="day")
 
         self.check_out_label = tk.Label(self, text="Check-out date:")
         self.check_out_date = DateEntry(
-            self, width=12, background='darkblue', foreground='white', borderwidth=2)
+            self, width=12, background='darkblue', foreground='white', borderwidth=2,selectmode="day")
 
         self.check_in_label.pack(padx=10)
         self.check_in_date.pack(padx=10)

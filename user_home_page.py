@@ -116,3 +116,6 @@ class HomePageScreen(tk.Tk):
         clear_frame(self.bottom_Frame)
         clear_frame(self.bottom_Frame1)
         Orders(self.bottom_Frame, self.bottom_Frame1)
+
+if __name__=='__main__':
+    HomePageScreen().mainloop()
